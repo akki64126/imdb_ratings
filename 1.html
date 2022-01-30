@@ -19,20 +19,6 @@
             </div>
         </div>
         </form>
-
-        <!-- <form id = "movieform" autocomplete ="off" >
-            <div class="form-group">
-
-                <label for="movie">Movie Name</label>
-                <input  class = "form-control" type="text" id ="movie">
-
-            </div>
-            <div class="form-group">
-                <button class = "btn btn-danger btn-block">
-                    Search
-                </button>
-            </div>
-        </form> -->
         <div class="final">
         <div id = "result">
 
@@ -50,13 +36,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <script>
-        // targetting function 
+         
         $(document).ready(function(){
 
-           // to get access to the api
+           
             var apikey = "k_388hyaxv"
 
-            //targetting form by id
+          
             $("#movieform").submit(function(event){
                 //prevents auto submission
                 event.preventDefault()
@@ -67,7 +53,7 @@
                 var result = ""
                 var result2 = ""
                 
-                //connecting query
+                
                 var url = "https://imdb-api.com/en/API/SearchMovie/"+apikey
 
                 $.ajax({
@@ -79,7 +65,7 @@
 
                         console.log(data); 
 
-                        //showing result
+                        
                         result = `  
                         <img style = "float:left" class="img-thumnail" width ="200" height ="200" src = "${(data.results)[0].image}"/>
                         `;
@@ -93,12 +79,12 @@
                     
                     url:"https://imdb-api.com/en/API/Ratings/k_388hyaxv/" + id,
                     
-                    //will retrn the data when the request is succesful
+                    
                     success:function(data2){
 
                         console.log(data2); 
 
-                        //showing result
+                      
                         result2 = `
                         
                         
